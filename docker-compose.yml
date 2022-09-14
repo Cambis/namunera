@@ -7,6 +7,8 @@ services:
       dockerfile: ./docker/tukutuku/Dockerfile
       target: dev
     image: cambis/namunera-test/web:deno10.6.194.5
+    environment:
+      - DENO_DIR=/app/.deno
     volumes:
       - .:/app
     ports:
