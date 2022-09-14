@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/tukutuku/Dockerfile
+      target: dev
+    image: cambis/namunera-test/web:deno10.6.194.5
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
