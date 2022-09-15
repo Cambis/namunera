@@ -3,5 +3,9 @@
   "deno.lint": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "deno.unstable": true,
-  "deno.cache": "./.deno"
+  "deno.cache": "./.deno",
+  "tailwindCSS.experimental.classRegex": [
+    ["cn\\(([^)]*)\\)", "'([^']*)'"],
+    ["classNames\\(([^)]*)\\)", "'([^']*)'"],
+  ],
 }
