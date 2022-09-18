@@ -1,0 +1,12 @@
+overwrite: true
+schema: "https://api.mocki.io/v2/c4d7a195/graphql"
+documents: "graphql/**/*.gql"
+generates:
+  "@types/graphql.d.ts":
+    plugins:
+      - "typescript-graphql-files-modules"
+  "lib/graphql.ts":
+    plugins:
+      - "typescript"
+      - "typescript-graphql-request"
+      - "typescript-operations"
