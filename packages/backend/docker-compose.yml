@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/tukutuku/Dockerfile
+      target: dev
+    image: cambis/namunera/backend/web:php8.1
+    environment:
+      - DOCUMENT_ROOT=/var/www/html/public
+      - SS_TRUSTED_PROXY_IPS=*
+      - SS_ENVIRONMENT_TYPE=dev
+      - SS_DATABASE_SERVER=mysql
+      - SS_DATABASE_NAME=SS_mysite
+      - SS_DATABASE_USERNAME=root
+      - SS_DATABASE_PASSWORD=
+      - SS_DEFAULT_ADMIN_USERNAME=admin
+      - SS_DEFAULT_ADMIN_PASSWORD=password
+      - SS_BASE_URL=http://127.0.0.1:3000
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8000:80"
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:

@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  backend:
+    depends_on:
+      - mysql
+    extends:
+      file: ./packages/backend/docker-compose.yml
+      service: web
+    networks:
+      - backend
+
+  frontend:
+    depends_on:
+      - backend
+      - mysql
+      # - graphql
+    extends:
+      file: ./packages/frontend/docker-compose.yml
+      service: web
+    networks:
+      - frontend
+      - backend
+
+  # graphql:
+  #   extends:
+  #     file: ./packages/frontend/docker-compose.yml
+  #     service: graphql
+  #   networks:
+  #     - frontend
+  #     - backend
+  
+  mysql:
+    extends:
+      file: ./packages/backend/docker-compose.yml
+      service: mysql
+    networks:
+      - backend
+  
+volumes:
+  mysql:
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
