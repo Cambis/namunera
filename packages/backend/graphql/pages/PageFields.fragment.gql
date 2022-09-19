@@ -1,0 +1,10 @@
+fragment PageFields on Page {
+  __typename
+  id
+  content
+  metaDescription
+  showInMenus
+  showInSearch
+  title
+  urlSegment
+}

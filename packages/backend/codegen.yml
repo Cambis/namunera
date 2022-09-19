@@ -1,0 +1,12 @@
+overwrite: true
+schema: "${SS_GRAPHQL_ENDPOINT:http://backend/graphql}"
+documents: "graphql/**/*.gql"
+generates:
+  "@types/graphql.d.ts":
+    plugins:
+      - "typescript-graphql-files-modules"
+  "lib/graphql.ts":
+    plugins:
+      - "typescript"
+      - "typescript-graphql-request"
+      - "typescript-operations"

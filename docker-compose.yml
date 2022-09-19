@@ -22,13 +22,16 @@ services:
       - frontend
       - backend
 
-  # graphql:
-  #   extends:
-  #     file: ./packages/frontend/docker-compose.yml
-  #     service: graphql
-  #   networks:
-  #     - frontend
-  #     - backend
+  graphql:
+    depends_on:
+      - backend
+      - mysql
+    extends:
+      file: ./packages/backend/docker-compose.yml
+      service: graphql
+    networks:
+      - frontend
+      - backend
   
   mysql:
     extends:

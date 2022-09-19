@@ -17,7 +17,7 @@ services:
       - SS_DATABASE_PASSWORD=
       - SS_DEFAULT_ADMIN_USERNAME=admin
       - SS_DEFAULT_ADMIN_PASSWORD=password
-      - SS_BASE_URL=http://127.0.0.1:3000
+      - SS_BASE_URL=http://127.0.0.1:8000
     volumes:
       - .:/var/www/html
     ports:
@@ -29,6 +29,16 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
       - mysql:/var/lib/mysql
+
+  graphql:
+    build:
+      context: .
+      dockerfile: ./docker/tuutei/Dockerfile
+      target: dev
+    image: cambis/namunera-test/graphql:node16.15.0
+    volumes:
+      - .:/app
+
 
 volumes:
   mysql:

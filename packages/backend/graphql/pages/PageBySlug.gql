@@ -1,0 +1,5 @@
+query PageBySlug($slug: String!) {
+  page: readOnePage(filter: { urlSegment: { eq: $slug } }) {
+    ...PageFields
+  }
+}
