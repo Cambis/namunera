@@ -28,6 +28,9 @@
             ".htaccess",
             "index.php",
             "web.config"
+        ],
+        "expose": [
+            "themes/app/dist"
         ]
     },
     "config": {

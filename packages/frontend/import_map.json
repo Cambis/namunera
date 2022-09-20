@@ -2,14 +2,14 @@
   "imports": {
     "@/components/": "./components/",
     "@/islands/": "./islands/",
+    "@/graphql": "../backend/themes/app/dist/graphql.ts",
+    "@/utils/": "./utils/",
     "classnames": "https://esm.sh/classnames@2.3.2",
     "$fresh/": "https://deno.land/x/fresh@1.1.1/",
     "graphql": "https://esm.sh/graphql@16.6.0",
-    "@graphql-codegen/cli": "https://esm.sh/@graphql-codegen/cli@2.6.2",
-    "@graphql-codegen/typescript": "https://esm.sh/@graphql-codegen/typescript@2.4.8",
-    "@graphql-codegen/typescript-graphql-files-modules": "https://esm.sh/@graphql-codegen/typescript-graphql-files-modules@2.4.0",
-    "@graphql-codegen/typescript-graphql-request": "https://esm.sh/@graphql-codegen/typescript-graphql-request@4.4.5",
-    "@graphql-codegen/typescript-operations": "https://esm.sh/@graphql-codegen/typescript-operations@2.3.5",
+    "graphql-request": "https://esm.sh/graphql-request@5.0.0",
+    "graphql-request/": "https://esm.sh/graphql-request@5.0.0/",
+    "graphql-tag": "https://esm.sh/graphql-tag@2.12.6",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
@@ -17,6 +17,6 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
-    "foo": "../../backend/lib/graphql.ts"
+    "xhr": "https://deno.land/x/xhr@0.1.0/mod.ts"
   }
 }

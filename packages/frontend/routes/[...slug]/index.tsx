@@ -10,12 +10,12 @@ import type { PageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<PageBySlugQuery> = {
   async GET(_, ctx) {
-    const home = await sdk().PageBySlug({ slug: "home" });
-    return ctx.render(home);
+    const page = await sdk().PageBySlug({ slug: ctx.params.slug });
+    return ctx.render(page);
   },
 };
 
-const Home = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
+const Page = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
   <Layout>
     <Container>
       <h1>{page?.title}</h1>
@@ -33,4 +33,4 @@ const Home = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
   </Layout>
 );
 
-export default Home;
+export default Page;

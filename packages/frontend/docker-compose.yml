@@ -11,5 +11,7 @@ services:
       - DENO_DIR=/app/.deno
     volumes:
       - .:/app
+      - ../backend/node_modules:/backend/node_modules
+      - ../backend/themes/app/dist:/backend/themes/app/dist
     ports:
-      - "8000:8000"
+      - "3000:8000"
