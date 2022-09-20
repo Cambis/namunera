@@ -18,6 +18,7 @@ services:
       - SS_DEFAULT_ADMIN_USERNAME=admin
       - SS_DEFAULT_ADMIN_PASSWORD=password
       - SS_BASE_URL=http://127.0.0.1:8000
+      - SS_GRAPHQL_ENDPOINT=http://backend/graphql
     volumes:
       - .:/var/www/html
     ports:
@@ -35,10 +36,9 @@ services:
       context: .
       dockerfile: ./docker/tuutei/Dockerfile
       target: dev
-    image: cambis/namunera-test/graphql:node16.15.0
+    image: cambis/namunera/graphql:node16.15.0
     volumes:
       - .:/app
-
 
 volumes:
   mysql:

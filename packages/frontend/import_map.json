@@ -1,10 +1,11 @@
 {
   "imports": {
-    "@/components/": "./components/",
-    "@/islands/": "./islands/",
+    "@/components": "./helpers/components.ts",
+    "@/islands": "./helpers/islands.ts",
     "@/graphql": "../backend/themes/app/dist/graphql.ts",
-    "@/utils/": "./utils/",
+    "@/utils": "./helpers/utils.ts",
     "classnames": "https://esm.sh/classnames@2.3.2",
+    "dotenv": "https://deno.land/std@0.145.0/dotenv/load.ts",
     "$fresh/": "https://deno.land/x/fresh@1.1.1/",
     "graphql": "https://esm.sh/graphql@16.6.0",
     "graphql-request": "https://esm.sh/graphql-request@5.0.0",

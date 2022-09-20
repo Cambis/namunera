@@ -6,6 +6,6 @@ FROM base AS dev
 
 USER deno
 
-EXPOSE 8000
+EXPOSE 3000
 
 CMD [ "run", "-A", "--watch=static/,routes/", "dev.ts" ]

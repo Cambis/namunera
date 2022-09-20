@@ -9,12 +9,12 @@
   },
   "lint": {
     "files": {
-      "include": ["components/", "islands/", "routes/"]
+      "include": ["components/", "islands/", "routes/", "utils/", "helpers/"]
     }
   },
   "fmt": {
     "files": {
-      "include": ["components/", "islands/", "routes/"]
+      "include": ["components/", "islands/", "routes/", "utils/", "helpers/"]
     }
   }
 }

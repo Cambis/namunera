@@ -14,7 +14,7 @@ services:
     depends_on:
       - backend
       - mysql
-      # - graphql
+      - graphql
     extends:
       file: ./packages/frontend/docker-compose.yml
       service: web

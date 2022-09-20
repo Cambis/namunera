@@ -6,12 +6,13 @@ services:
       context: .
       dockerfile: ./docker/tukutuku/Dockerfile
       target: dev
-    image: cambis/namunera-test/web:deno10.6.194.5
+    image: cambis/namunera/web:deno10.6.194.5
     environment:
       - DENO_DIR=/app/.deno
+      - SS_GRAPHQL_ENDPOINT=http://backend/graphql
     volumes:
       - .:/app
       - ../backend/node_modules:/backend/node_modules
       - ../backend/themes/app/dist:/backend/themes/app/dist
     ports:
-      - "3000:8000"
+      - "3000:3000"

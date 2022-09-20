@@ -1,10 +1,8 @@
-import Container from "@/components/Container.tsx";
-import Counter from "@/islands/Counter.tsx";
-import Layout from "@/components/Layout.tsx";
-
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { sdk } from "@/utils/silverstripe.ts";
+import { Container, Layout } from "@/components";
+import { Counter } from "@/islands";
+import { sdk } from "@/utils";
 
 import type { PageBySlugQuery } from "@/graphql";
 
