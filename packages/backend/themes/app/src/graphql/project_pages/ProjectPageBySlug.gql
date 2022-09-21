@@ -2,4 +2,8 @@ query ProjectPageBySlug($slug: String!) {
   page: readOneProjectPage(filter: { urlSegment: { eq: $slug }}) {
     ...ProjectPageFields
   }
+
+  siteConfig: readOneSiteConfig {
+    ...SiteConfigFields
+  }
 }

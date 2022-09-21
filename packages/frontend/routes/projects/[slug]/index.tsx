@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, Layout } from "@/components";
+import { Container, Head, Layout } from "@/components";
 import { sdk } from "@/utils";
 
 import type { ProjectPageBySlugQuery } from "@/graphql";
@@ -12,8 +12,12 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
   },
 };
 
-const Home = ({ data: { page } }: PageProps<ProjectPageBySlugQuery>) => (
+const Home = ({ data: { page, siteConfig } }: PageProps<ProjectPageBySlugQuery>) => {
+  console.log(siteConfig);
+
+  return (
   <Layout>
+    <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
     <Container>
       <img
         src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
@@ -25,7 +29,7 @@ const Home = ({ data: { page } }: PageProps<ProjectPageBySlugQuery>) => (
     <Container>
       <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
     </Container>
-  </Layout>
-);
+  </Layout>);
+};
 
 export default Home;
