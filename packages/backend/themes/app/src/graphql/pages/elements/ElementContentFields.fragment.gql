@@ -1,0 +1,3 @@
+fragment ElementContentFields on ElementContent {
+  html
+}
