@@ -1,4 +1,7 @@
 fragment SiteConfigFields on SiteConfig {
   id
   title
+  linkedInLink {
+    ...linkFields
+  }
 }
