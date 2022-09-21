@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, Layout } from "@/components";
+import { Container, Layout, Hero } from "@/components";
 import { Counter } from "@/islands";
 import { sdk } from "@/utils";
 
@@ -16,6 +16,7 @@ export const handler: Handlers<PageBySlugQuery> = {
 const Home = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
   <Layout>
     <Container>
+      <Hero />
       <h1>{page?.title}</h1>
       <img
         src="/logo.svg"

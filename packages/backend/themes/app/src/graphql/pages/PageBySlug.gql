@@ -2,4 +2,9 @@ query PageBySlug($slug: String!) {
   page: readOnePage(filter: { urlSegment: { eq: $slug } }) {
     ...PageFields
   }
+  siteConfig: readOneSiteConfig {
+       title
+       heroTitle
+       heroContent
+  }
 }
