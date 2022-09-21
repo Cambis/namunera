@@ -1,8 +1,8 @@
 import { BaseElementInterfaceConnection } from "@/graphql";
-import ContentBlock from './ElementContent.tsx';
+import ContentBlock from "./ElementContent.tsx";
 
 interface Props {
-  elements: BaseElementInterfaceConnection['nodes']
+  elements: BaseElementInterfaceConnection["nodes"];
 }
 
 const ElementalArea = ({ elements }: Props) => {
@@ -21,17 +21,21 @@ const ElementalArea = ({ elements }: Props) => {
         const ElementComponent = components[type];
 
         if (!ElementComponent) {
-          return <div key={`${type}--${i}`} className="element">No element found for {type}</div>
+          return (
+            <div key={`${type}--${i}`} className="element">
+              No element found for {type}
+            </div>
+          );
         }
 
         return (
-          <section key={element.id}>            
-              <ElementComponent element={element} />            
+          <section key={element.id}>
+            <ElementComponent element={element} />
           </section>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default ElementalArea
+export default ElementalArea;
