@@ -12,7 +12,7 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
   },
 };
 
-const Home = (
+const Project = (
   { data: { page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
 ) => {
   console.log(siteConfig);
@@ -20,14 +20,16 @@ const Home = (
   return (
     <Layout>
       <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
-      <Container>
+      <div className="w-full pb-6">
         <img
           src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
           className="w-full h-auto"
           alt={page?.title as string}
         />
-        <h1 className="text-4xl font-bold">{page?.title}</h1>
-      </Container>
+        <Container>
+          <h1 className="text-4xl font-bold my-6">{page?.title}</h1>
+        </Container>
+      </div>
       <Container>
         <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
       </Container>
@@ -35,4 +37,4 @@ const Home = (
   );
 };
 
-export default Home;
+export default Project;

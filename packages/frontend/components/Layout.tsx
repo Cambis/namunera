@@ -8,7 +8,7 @@ type LayoutProps = {
 
 const Layout = ({ classNames, children }: LayoutProps) => (
   <>
-    <main className={cn("min-h-screen max-w-screen-md mx-auto", classNames)}>
+    <main className={cn("min-h-screen mx-auto", classNames)}>
       {children}
     </main>
   </>
