@@ -13,8 +13,8 @@ export const handler: Handlers<PageBySlugQuery> = {
   },
 };
 
-const Page = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
-  <Layout>
+const Page = ({ data: { page, navItems } }: PageProps<PageBySlugQuery>) => (
+  <Layout headerProps={navItems}>
     <Container>
       <h1>{page?.title}</h1>
       <img
