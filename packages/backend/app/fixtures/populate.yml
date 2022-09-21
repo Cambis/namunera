@@ -16,6 +16,9 @@ Page:
     URLSegment: 'projects'
     ShowInMenus: '0'
     ShowInSearch: '0'
+  about:
+    Title: 'About'
+    URLSegment: 'about'
 
 App\PageTypes\ProjectPage:
   silverstripeDesignReview:

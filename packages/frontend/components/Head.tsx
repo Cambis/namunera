@@ -14,7 +14,7 @@ type HeadProps = {
 
 const Head = ({ image, page, siteConfig }: HeadProps) => (
   <FreshHead>
-    <title>{`${siteConfig?.title} | ${page?.title}`}</title>
+    <title>{`${siteConfig?.title || "Namunēra"} | ${page?.title}`}</title>
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <meta name="description" content={page?.metaDescription as string} />
 

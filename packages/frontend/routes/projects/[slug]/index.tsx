@@ -13,28 +13,24 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
 };
 
 const Project = (
-  { data: { page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
-) => {
-  console.log(siteConfig);
-
-  return (
-    <Layout>
-      <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
-      <div className="w-full pb-6">
-        <img
-          src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
-          className="w-full h-auto"
-          alt={page?.title as string}
-        />
-        <Container>
-          <h1 className="text-4xl font-bold my-6">{page?.title}</h1>
-        </Container>
-      </div>
+  { data: { navItems, page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
+) => (
+  <Layout headerProps={navItems}>
+    <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
+    <div className="w-full pb-6">
+      <img
+        src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
+        className="w-full h-auto"
+        alt={page?.title as string}
+      />
       <Container>
-        <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
+        <h1 className="text-4xl font-bold my-6">{page?.title}</h1>
       </Container>
-    </Layout>
-  );
-};
+    </div>
+    <Container>
+      <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
+    </Container>
+  </Layout>
+);
 
 export default Project;
