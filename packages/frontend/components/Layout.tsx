@@ -1,13 +1,15 @@
-import type { ComponentChildren } from "preact";
 import cn from "classnames";
-import Header, { HeaderLink } from './Header.tsx';
 
+import { Header } from "@/components";
+
+import type { ComponentChildren } from "preact";
+import type { HeaderLink } from "@/types";
 
 type LayoutProps = {
   classNames?: string;
   children: ComponentChildren;
   headerProps: {
-    nodes: HeaderLink[]
+    nodes: HeaderLink[];
   };
 };
 
