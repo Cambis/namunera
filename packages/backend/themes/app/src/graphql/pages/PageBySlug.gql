@@ -3,14 +3,15 @@ query PageBySlug($slug: String!) {
     ...PageFields
   },
   navItems: readPages(filter: {
-    parentID: { eq: 0 },
-    showInMenus: { eq: true }
-  }) {
-    nodes {
-      id,
-      title,
-      link,
-      menuTitle
+      parentID: { eq: 0 },
+      showInMenus: { eq: true },
+      title: { ne: "Home" }
+  }, sort: { sort: ASC }) {
+      nodes {
+        id,
+        title,
+        link,
+        menuTitle
+      }
     }
-  }
 }
