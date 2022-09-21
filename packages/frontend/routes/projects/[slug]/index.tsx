@@ -12,24 +12,27 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
   },
 };
 
-const Home = ({ data: { page, siteConfig } }: PageProps<ProjectPageBySlugQuery>) => {
+const Home = (
+  { data: { page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
+) => {
   console.log(siteConfig);
 
   return (
-  <Layout>
-    <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
-    <Container>
-      <img
-        src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
-        className="w-full h-auto"
-        alt={page?.title as string}
-      />
-      <h1 className="text-4xl font-bold">{page?.title}</h1>
-    </Container>
-    <Container>
-      <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
-    </Container>
-  </Layout>);
+    <Layout>
+      <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
+      <Container>
+        <img
+          src={`${Deno.env.get("SS_BASE_URL")}${page?.heroImage?.link}`}
+          className="w-full h-auto"
+          alt={page?.title as string}
+        />
+        <h1 className="text-4xl font-bold">{page?.title}</h1>
+      </Container>
+      <Container>
+        <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
+      </Container>
+    </Layout>
+  );
 };
 
 export default Home;
