@@ -2,6 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 
 import { Container, ElementalArea, Head, Layout } from "@/components";
 import { sdk } from "@/utils";
+import {LikeCounter} from '@/islands';
 
 import type { BaseElement, ProjectPageBySlugQuery } from "@/graphql";
 
@@ -14,7 +15,10 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
 
 const Project = (
   { data: { navItems, page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
-) => (
+) => {
+  const startingLike = page?.id ? parseInt(page?.id) : 1;
+
+  return (
   <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
     <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
     <div className="w-full pb-6">
@@ -33,8 +37,10 @@ const Project = (
           elements={page?.elementalArea?.elements.nodes as BaseElement[]}
         />
       )}
+      <LikeCounter start={startingLike} />
     </Container>
   </Layout>
-);
+)
+};
 
 export default Project;

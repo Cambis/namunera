@@ -1,7 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, ElementalArea, Head, Layout } from "@/components";
-import { Counter } from "@/islands";
+import { Container, ElementalArea, Head, Layout } from "@/components"
 import { sdk } from "@/utils";
 
 import type { BaseElementInterface, PageBySlugQuery } from "@/graphql";
@@ -24,7 +23,6 @@ const Page = (
       <ElementalArea
         elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
       />
-      <Counter start={3} />
     </Container>
   </Layout>
 );
