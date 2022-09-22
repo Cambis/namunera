@@ -10,7 +10,6 @@ export const handler: Handlers<PageBySlugQuery> = {
   async GET(_, ctx) {
     const page = await sdk().PageBySlug({ slug: ctx.params.slug });
 
-    console.log(page);
     return ctx.render(page);
   },
 };
