@@ -8,4 +8,7 @@ fragment PageFields on PageInterface {
   title
   urlSegment
   link
+  elementalArea {
+    ...ElementalAreaFields
+  }
 }

@@ -1,0 +1,8 @@
+fragment ElementsFields on BaseElementInterface {
+	...BaseFields
+	...BaseElementFields
+
+  ... on ElementContent {
+      ...ElementContentFields
+  }
+}

@@ -5,3 +5,5 @@ DNADesign\Populate\Populate:
     - Page
     - SilverStripe\Assets\File
     - SilverStripe\SiteConfig\SiteConfig
+    - DNADesign\Elemental\Models\ElementalArea
+    - DNADesign\Elemental\Models\ElementContent
