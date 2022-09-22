@@ -4,6 +4,7 @@ Fresh + Silverstripe example integration
 ## Getting Started 🔧
 ### Prerequisites ⚙️
 - [Docker-Compose](https://docs.docker.com/compose/install/)
+- [Deno](https://deno.land/#installation)
 
 ### Docker World 🌏
 This is a general overview of the services inside of `docker-compose.yml`
@@ -18,14 +19,16 @@ First off, build the project:
 docker-compose build
 ```
 
+Install dependencies
+```bash
+docker-compose run --rm backend sake dev/build
+docker-compose run --rm backend composer populate
+docker-compose run --rm graphql yarn codegen
+```
+
 Then run the webserver:
 ```bash
 docker-compose up
-```
-
-Wait for a minute until the dependencies are installed, then:
-```bash
-docker-compose exec backend sake dev/build
 ```
 
 Then visit http://127.0.0.1:8000 for the backend and http://127.0.0.1:3000 for the frontend.

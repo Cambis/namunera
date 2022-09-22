@@ -10,23 +10,11 @@ SilverStripe\Assets\Image:
     Title: Default project hero
     PopulateFileFrom: app/fixtures/assets/default-project.png
 
-Page:
-  homepage:
-    Title: 'Home'
-    URLSegment: 'home'
-    Content: >
-      <p>Welcome to SilverStripe! This is the default homepage. You can edit this page by opening <a href="admin/">the CMS</a>.</p>
-      <p>You can now access the <a href="http://docs.silverstripe.org">developer documentation</a>, or begin the <a href="http://www.silverstripe.org/learn/lessons">SilverStripe lessons</a>.</p>
-  projects:
-    Title: 'Projects'
-    URLSegment: 'projects'
-    ShowInMenus: '0'
-    ShowInSearch: '0'
-  about:
-    Title: 'About'
-    URLSegment: 'about'
-
 DNADesign\Elemental\Models\ElementalArea:
+  homepage:
+    OwnerClassName: 'Page'
+  projects:
+    OwnerClassName: 'Page'
   silverstripeDesignReview:
     OwnerClassName: 'App\PageTypes\ProjectPage'
   alps:
@@ -37,6 +25,19 @@ DNADesign\Elemental\Models\ElementalArea:
     OwnerClassName: 'App\PageTypes\ProjectPage'
   cleanUpConfluence:
     OwnerClassName: 'App\PageTypes\ProjectPage'
+
+Page:
+  homepage:
+    Title: 'Home'
+    URLSegment: 'home'
+    ElementalArea: =>DNADesign\Elemental\Models\ElementalArea.homepage
+  projects:
+    Title: 'Projects'
+    URLSegment: 'projects'
+    ElementalArea: =>DNADesign\Elemental\Models\ElementalArea.projects
+  about:
+    Title: 'About'
+    URLSegment: 'about'
 
 DNADesign\Elemental\Models\ElementContent:
   silverstripeDesignReview:
