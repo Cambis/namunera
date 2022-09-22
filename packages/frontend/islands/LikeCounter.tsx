@@ -12,6 +12,7 @@ const LikeCounter = ({ start }: CounterProps) => {
   return (
     <div class="flex gap-2 w-full my-5">
       <Button
+        className="px-2 py-1 border(gray-100 2) hover:bg-gray-200 flex items-center  border-1 rounded-md"
         onClick={() => {
           setLiked(!liked);
           liked ? setCount(count - 1) : setCount(count + 1);
