@@ -1,34 +1,36 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-
-import { Container, Layout } from "@/components";
-import { Counter } from "@/islands";
+import { PageWrapper } from "@/components";
 import { sdk } from "@/utils";
-
 import type { PageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<PageBySlugQuery> = {
   async GET(_, ctx) {
-    const page = await sdk().PageBySlug({ slug: ctx.params.slug });
-    return ctx.render(page);
+    const { slug } = ctx.params;
+    const getPages = await sdk().PageBySlug({ slug: slug? slug : "home" });
+    return ctx.render(getPages);
   },
 };
 
 const Page = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
-  <Layout>
-    <Container>
-      <h1>{page?.title}</h1>
-      <img
-        src="/logo.svg"
-        className="w-32 h-32"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p className="my-6">
-        Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-        file, and refresh.
-      </p>
-      <Counter start={3} />
-    </Container>
-  </Layout>
+    <PageWrapper>
+      {
+        page?.title && (
+              <>
+                <h1>{page?.title}</h1>
+                <div dangerouslySetInnerHTML={{__html: page?.content }} ></div>
+              </>
+          )
+      }
+
+      {
+          !page?.title && (
+              <>
+                <h1>{`Ooops. Page not found!` }</h1>
+              </>
+          )
+      }
+
+    </PageWrapper>
 );
 
 export default Page;
