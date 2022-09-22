@@ -18,9 +18,11 @@ const Home = (
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
       <h1>{page?.title}</h1>
-      {page?.elementalArea && <ElementalArea
-        elements={page?.elementalArea?.elements.nodes as BaseElement[]}
-      />}
+      {page?.elementalArea && (
+        <ElementalArea
+          elements={page?.elementalArea?.elements.nodes as BaseElement[]}
+        />
+      )}
     </Container>
   </Layout>
 );
