@@ -1,0 +1,31 @@
+query Homepage {
+  page: readOnePage(filter: { urlSegment: { eq: "home" } }) {
+    ...PageFields
+  }
+
+  pages: readProjectPages(limit: 6) {
+    nodes {
+      ...ProjectPageFields
+    }
+  }
+
+  navItems: readPages(
+    filter: {
+      parentID: { eq: 0 }
+      showInMenus: { eq: true }
+      title: { ne: "Home" }
+    }
+    sort: { sort: ASC }
+  ) {
+    nodes {
+      id
+      title
+      link
+      menuTitle
+    }
+  }
+  
+  siteConfig: readOneSiteConfig {
+    ...SiteConfigFields
+  }
+}
