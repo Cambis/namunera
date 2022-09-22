@@ -1,10 +1,10 @@
 import cn from "classnames";
-import type { SiteConfigFieldsFragment } from "@/graphql";
 
-import { Header } from "@/components";
-import { Footer } from "@/components";
+import { Footer, Header } from "@/components";
+
 import type { ComponentChildren } from "preact";
 import type { FooterLink, HeaderLink } from "@/types";
+import type { SiteConfigFieldsFragment } from "@/graphql";
 
 type LayoutProps = {
   classNames?: string;

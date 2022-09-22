@@ -15,7 +15,7 @@ export const handler: Handlers<ProjectPageBySlugQuery> = {
 const Project = (
   { data: { navItems, page, siteConfig } }: PageProps<ProjectPageBySlugQuery>,
 ) => (
-  <Layout headerProps={navItems}>
+  <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
     <Head image={page?.heroImage} page={page} siteConfig={siteConfig} />
     <div className="w-full pb-6">
       <img
