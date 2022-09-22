@@ -14,7 +14,7 @@ export const handler: Handlers<PageBySlugQuery> = {
 const Home = (
   { data: { page, navItems, siteConfig } }: PageProps<PageBySlugQuery>,
 ) => (
-  <Layout  headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
+  <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
       <h1>{page?.title}</h1>

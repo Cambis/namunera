@@ -1,11 +1,5 @@
 import type { SiteConfigFieldsFragment } from "@/graphql";
-
-export type FooterLink = {
-  id: string;
-  title?: string | null | undefined;
-  link: string;
-  menuTitle?: string | null | undefined;
-};
+import type { FooterLink } from "@/types";
 
 type FooterProps = {
   nodes: Array<FooterLink>;

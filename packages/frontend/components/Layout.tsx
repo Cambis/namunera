@@ -1,11 +1,10 @@
 import cn from "classnames";
-import Footer, { FooterLink } from "./Footer.tsx";
 import type { SiteConfigFieldsFragment } from "@/graphql";
 
 import { Header } from "@/components";
-
+import { Footer } from "@/components";
 import type { ComponentChildren } from "preact";
-import type { HeaderLink } from "@/types";
+import type { FooterLink, HeaderLink } from "@/types";
 
 type LayoutProps = {
   classNames?: string;

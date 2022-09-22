@@ -14,7 +14,6 @@ export const handler: Handlers<PageBySlugQuery> = {
   },
 };
 
-
 const Page = (
   { data: { page, navItems, siteConfig } }: PageProps<PageBySlugQuery>,
 ) => (
