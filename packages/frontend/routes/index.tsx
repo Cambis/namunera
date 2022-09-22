@@ -11,13 +11,11 @@ export const handler: Handlers<PageBySlugQuery> = {
   },
 };
 
-const Home = (
-  { data: { page, navItems, siteConfig } }: PageProps<PageBySlugQuery>,
-) => (
+const Home = ({ data: { page, navItems, heroSiteConfig, siteConfig } }: PageProps<PageBySlugQuery>) => (
   <Layout headerProps={navItems}>
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
-      <Hero />
+      <Hero heroData={heroSiteConfig} />
       <h1>{page?.title}</h1>
       {page?.elementalArea && (
         <ElementalArea

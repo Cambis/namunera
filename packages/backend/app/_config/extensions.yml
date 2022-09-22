@@ -4,7 +4,6 @@ Name: app-extensions
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - App\Extensions\SiteConfigExtension
-=======
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension

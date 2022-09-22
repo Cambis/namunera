@@ -41,4 +41,8 @@ class SiteConfigExtension extends DataExtension
             ]
         );
     }
+
+    public function canView() {
+        return true;
+    }
 }
