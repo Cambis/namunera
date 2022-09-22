@@ -8,3 +8,4 @@ export { default as ElementalArea } from "../components/elements/ElementalArea.t
 export { default as ElementContent } from "../components/elements/ElementContent.tsx";
 export { default as Layout } from "../components/Layout.tsx";
 export { default as ProjectShowcase } from "../components/ProjectShowcase.tsx";
+export { default as Hero } from "../components/Hero.tsx";

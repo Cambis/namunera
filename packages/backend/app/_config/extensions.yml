@@ -1,10 +1,12 @@
 ---
-Name: myproject_extensions
+Name: app-extensions
 ---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - App\Extensions\SiteConfigExtension
+    - App\Extensions\FooterSiteConfigExtension
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
-SilverStripe\SiteConfig\SiteConfig:
-  extensions:
-    - App\Extensions\FooterSiteConfigExtension
+
 

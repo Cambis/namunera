@@ -4,6 +4,7 @@ import {
   Container,
   ElementalArea,
   Head,
+  Hero,
   Layout,
   ProjectShowcase,
 } from "@/components";
@@ -23,6 +24,7 @@ const Home = (
   <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
+      <Hero heroData={siteConfig} />
       <h1 className="text-4xl font-bold text-center my-6">
         {siteConfig?.title}
       </h1>

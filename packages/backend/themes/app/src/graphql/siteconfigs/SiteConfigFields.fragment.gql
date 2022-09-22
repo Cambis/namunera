@@ -4,4 +4,6 @@ fragment SiteConfigFields on SiteConfig {
   linkedInLink {
     ...LinkFields
   }
+  heroTitle
+  heroContent
 }
