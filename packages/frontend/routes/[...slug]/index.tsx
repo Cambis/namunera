@@ -1,7 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, ElementalArea, Head, Layout } from "@/components";
-import { Counter } from "@/islands";
+import { Container, ElementalArea, Head, Layout } from "@/components"
 import { sdk } from "@/utils";
 
 import type { BaseElementInterface, PageBySlugQuery } from "@/graphql";
@@ -21,10 +20,12 @@ const Page = (
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
       <h1>{page?.title}</h1>
-      <ElementalArea
-        elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
-      />
-      <Counter start={3} />
+      {page?.elementalArea && (
+        <ElementalArea
+          elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
+        />
+      )}
+
     </Container>
   </Layout>
 );
