@@ -6,18 +6,17 @@ interface Props {
 }
 
 const ElementalArea = ({ elements }: Props) => {
+  // content block type
   const components = {
     ElementContent: ContentBlock,
   };
 
-  console.log(elements);
-
   return (
     <>
       {elements.map((element, i) => {
-        // @ts-ignore
+        // @ts-ignore get element type name
         const type = element.__typename;
-        // @ts-ignore
+        // @ts-ignore load content block
         const ElementComponent = components[type];
 
         if (!ElementComponent) {
