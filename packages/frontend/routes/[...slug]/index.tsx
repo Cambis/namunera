@@ -14,27 +14,28 @@ export const handler: Handlers<PageBySlugQuery> = {
   },
 };
 
-const Page = ({ data: { page, navItems } }: PageProps<PageBySlugQuery>) => (
-    <Layout headerProps={navItems}>
-      <Container>
-      {
-        page?.title && (
-              <>
-                <h1>{page?.title}</h1>
-                <div dangerouslySetInnerHTML={{__html: page?.content }} ></div>
-              </>
-          )
-      }
+const Page = ({ data: { page, navItems, siteConfig  } }: PageProps<PageBySlugQuery>) => (
+    <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
+        <Head image={undefined} page={page} siteConfig={siteConfig} />
+          <Container>
+          {
+            page?.title && (
+                  <>
+                    <h1>{page?.title}</h1>
+                    <div dangerouslySetInnerHTML={{__html: page?.content }} ></div>
+                  </>
+              )
+          }
 
-      {
-          !page?.title && (
-              <>
-                <h1>{`Ooops. Page not found!` }</h1>
-              </>
-          )
-      }
+          {
+              !page?.title && (
+                  <>
+                    <h1>{`Ooops. Page not found!` }</h1>
+                  </>
+              )
+          }
 
-      </Container>
+          </Container>
     </Layout>
 
 );

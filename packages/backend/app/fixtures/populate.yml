@@ -1,3 +1,9 @@
+SilverStripe\SiteConfig\SiteConfig:
+  mysiteconfig:
+    Title: "Namunēra"
+    Tagline: "When life gives you lemons, you make lemonade!"
+    PopulateMergeAny: true
+
 SilverStripe\Assets\Image:
   defaultProjectHero:
     Filename: assets/fixtures/default-project.png

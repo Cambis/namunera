@@ -1,0 +1,5 @@
+fragment LinkFields on Link {
+  id
+  linkURL
+  title
+}
