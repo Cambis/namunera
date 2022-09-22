@@ -2,7 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 
 import { Container, ElementalArea, Head, Layout } from "@/components";
 import { sdk } from "@/utils";
-import { LikeCounter } from "@/islands";
+import { LikeCounter, SubscribeButton } from "@/islands";
 
 import type { BaseElement, ProjectPageBySlugQuery } from "@/graphql";
 
@@ -41,7 +41,10 @@ const Project = (
             elements={page?.elementalArea?.elements.nodes as BaseElement[]}
           />
         )}
-        <LikeCounter start={startingLike} />
+        <div className="flex">
+          <SubscribeButton />
+          <LikeCounter start={startingLike} />
+        </div>
       </Container>
     </Layout>
   );

@@ -8,15 +8,15 @@ type ProjectShowcaseProps = {
 
 const ProjectShowcase = ({ pages }: ProjectShowcaseProps) => (
   <Container>
-    <div className="flex flex-row flex-wrap -mx-4">
+    <div className="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid gap-4 mb-6">
       {pages?.nodes.map((item) => (
-        <a className="block w-1/3 p-4" href={item.link}>
+        <a className="block p-4 border-1 shadow-md hover:shadow-xl" href={item.link}>
           <img
             src={`${Deno.env.get("SS_BASE_URL")}${item?.heroImage?.link}`}
             className="w-full h-auto"
             alt={item?.title as string}
           />
-          <h3 className="text-2xl font-bold">{item?.title}</h3>
+          <h3 className="text-2xl font-bold mt-4">{item?.title}</h3>
         </a>
       ))}
     </div>
