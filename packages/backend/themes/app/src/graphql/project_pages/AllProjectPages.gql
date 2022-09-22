@@ -1,7 +1,14 @@
-query PageBySlug($slug: String!) {
-  page: readOnePage(filter: { urlSegment: { eq: $slug } }) {
+query AllProjectPages {
+  page: readOnePage(filter: { urlSegment: { eq: "projects" } }) {
     ...PageFields
   }
+
+  pages: readProjectPages {
+    nodes {
+      ...ProjectPageFields
+    }
+  }
+
   navItems: readPages(
     filter: {
       parentID: { eq: 0 }
@@ -17,12 +24,8 @@ query PageBySlug($slug: String!) {
       menuTitle
     }
   }
-  
+
   siteConfig: readOneSiteConfig {
     ...SiteConfigFields
   }
-  heroSiteConfig: readOneSiteConfig {
-      	heroTitle
-      	heroContent
-   }
 }

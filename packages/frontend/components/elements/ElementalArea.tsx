@@ -13,7 +13,7 @@ const ElementalArea = ({ elements }: Props) => {
 
   return (
     <>
-      {elements.map((element, i) => {
+      {elements?.map((element, i) => {
         // @ts-ignore get element type name
         const type = element.__typename;
         // @ts-ignore load content block
