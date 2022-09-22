@@ -16,7 +16,7 @@ type LayoutProps = {
 const Layout = ({ classNames, children, headerProps }: LayoutProps) => (
   <>
     <Header nodes={headerProps.nodes} />
-    <main className={cn("min-h-screen max-w-screen-md mx-auto", classNames)}>
+    <main className={cn("min-h-screen mx-auto", classNames)}>
       {children}
     </main>
   </>

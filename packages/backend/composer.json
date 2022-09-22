@@ -8,11 +8,13 @@
         "silverstripe/recipe-cms": "~4.11.0@stable",
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/login-forms": "~4.7.0@stable",
-        "silverstripe/silverstripe-headless": "dev-main"
+        "silverstripe/silverstripe-headless": "dev-main",
+        "dnadesign/silverstripe-elemental": "^4.9"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
-        "silverstripe/graphql-devtools": "dev-master"
+        "silverstripe/graphql-devtools": "dev-master",
+        "dnadesign/silverstripe-populate": "^2.1"
     },
     "extra": {
         "resources-dir": "_resources",
@@ -40,6 +42,9 @@
             "silverstripe/recipe-plugin": true,
             "silverstripe/vendor-plugin": true
         }
+    },
+    "scripts": {
+        "populate": "sake dev/tasks/DNADesign-Populate-PopulateTask flush=1"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"

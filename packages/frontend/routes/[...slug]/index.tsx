@@ -1,9 +1,10 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, Layout } from "@/components";
+import { Container, ElementalArea, Head, Layout } from "@/components";
+import { Counter } from "@/islands";
 import { sdk } from "@/utils";
 
-import type { PageBySlugQuery } from "@/graphql";
+import type { BaseElementInterface, PageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<PageBySlugQuery> = {
   async GET(_, ctx) {
@@ -35,6 +36,7 @@ const Page = ({ data: { page, navItems } }: PageProps<PageBySlugQuery>) => (
 
       </Container>
     </Layout>
+
 );
 
 export default Page;

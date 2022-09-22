@@ -1,0 +1,4 @@
+fragment SiteConfigFields on SiteConfig {
+  id
+  title
+}

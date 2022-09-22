@@ -1,0 +1,16 @@
+fragment BaseElementFields on BaseElementInterface {
+  className
+  lastEdited
+  created
+  version
+  title
+  showTitle
+  sort
+  extraClass
+  style
+  parentID
+  parent { 
+    __typename ## add your fields below
+  }
+  link
+}

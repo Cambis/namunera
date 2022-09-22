@@ -1,0 +1,9 @@
+DNADesign\Populate\Populate:
+  include_yaml_fixtures:
+    - 'app/fixtures/populate.yml'
+  truncate_objects:
+    - Page
+    - SilverStripe\Assets\File
+    - SilverStripe\SiteConfig\SiteConfig
+    - DNADesign\Elemental\Models\ElementalArea
+    - DNADesign\Elemental\Models\ElementContent

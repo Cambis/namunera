@@ -10,6 +10,7 @@ services:
     environment:
       - DENO_DIR=/app/.deno
       - SS_GRAPHQL_ENDPOINT=http://backend/graphql
+      - SS_BASE_URL=http://127.0.0.1:8000
     volumes:
       - .:/app
       - ../backend/node_modules:/backend/node_modules

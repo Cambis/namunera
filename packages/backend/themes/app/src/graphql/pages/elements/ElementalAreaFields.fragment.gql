@@ -1,0 +1,8 @@
+fragment ElementalAreaFields on ElementalArea {
+  elements {
+    nodes {
+      ...BaseFields
+      ...ElementsFields
+    }
+  }
+}
