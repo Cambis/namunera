@@ -1,2 +1,2 @@
 // Export islands here
-export { default as Counter } from "../islands/Counter.tsx";
+export { default as LikeCounter } from "../islands/LikeCounter.tsx";
