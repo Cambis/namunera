@@ -18,7 +18,7 @@ query PageBySlug($slug: String!) {
       menuTitle
     }
   }
-
+  
   siteConfig: readOneSiteConfig {
     ...SiteConfigFields
   }

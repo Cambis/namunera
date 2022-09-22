@@ -1,9 +1,10 @@
 import cn from "classnames";
 
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 
 import type { ComponentChildren } from "preact";
-import type { HeaderLink } from "@/types";
+import type { FooterLink, HeaderLink } from "@/types";
+import type { SiteConfigFieldsFragment } from "@/graphql";
 
 type LayoutProps = {
   classNames?: string;
@@ -11,14 +12,24 @@ type LayoutProps = {
   headerProps: {
     nodes: HeaderLink[];
   };
+  footerLinks: {
+    nodes: FooterLink[];
+  };
+  siteConfig: SiteConfigFieldsFragment | null | undefined;
 };
 
-const Layout = ({ classNames, children, headerProps }: LayoutProps) => (
+const Layout = (
+  { classNames, children, headerProps, footerLinks, siteConfig }: LayoutProps,
+) => (
   <>
     <Header nodes={headerProps.nodes} />
     <main className={cn("min-h-screen mx-auto", classNames)}>
       {children}
     </main>
+    <Footer
+      nodes={footerLinks.nodes}
+      siteConfig={siteConfig}
+    />
   </>
 );
 
