@@ -20,9 +20,12 @@ const Page = (
     <Head image={undefined} page={page} siteConfig={siteConfig} />
     <Container>
       <h1>{page?.title}</h1>
-      <ElementalArea
-        elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
-      />
+      {page?.elementalArea && (
+        <ElementalArea
+          elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
+        />
+      )}
+
     </Container>
   </Layout>
 );
