@@ -1,6 +1,7 @@
 SilverStripe\Headless\GraphQL\ModelLoader:
   included_dataobjects:
     page: 'Page'
+    pageTypes: 'App\PageTypes\*'
     cms: 'SilverStripe\CMS\Model\SiteTree'
     siteconfig: 'SilverStripe\SiteConfig\*'
     assets: 'SilverStripe\Assets\*'
