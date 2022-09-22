@@ -1,6 +1,8 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { PageWrapper } from "@/components";
+
+import { Container, Layout } from "@/components";
 import { sdk } from "@/utils";
+
 import type { PageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<PageBySlugQuery> = {
@@ -12,7 +14,8 @@ export const handler: Handlers<PageBySlugQuery> = {
 };
 
 const Page = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
-    <PageWrapper>
+    <Layout headerProps={navItems}>
+      <Container>
       {
         page?.title && (
               <>
@@ -30,7 +33,8 @@ const Page = ({ data: { page } }: PageProps<PageBySlugQuery>) => (
           )
       }
 
-    </PageWrapper>
+      </Container>
+    </Layout>
 );
 
 export default Page;

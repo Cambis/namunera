@@ -4,6 +4,7 @@
     "@/islands": "./helpers/islands.ts",
     "@/graphql": "../backend/themes/app/dist/graphql.ts",
     "@/utils": "./helpers/utils.ts",
+    "@/types": "./utils/types.ts",
     "classnames": "https://esm.sh/classnames@2.3.2",
     "dotenv": "https://deno.land/std@0.145.0/dotenv/load.ts",
     "$fresh/": "https://deno.land/x/fresh@1.1.1/",
