@@ -1,10 +1,8 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-
-import { Container, Head,  Hero, Layout } from "@/components";
 import { Counter } from "@/islands";
+import { Container, ElementalArea, Hero,  Head, Layout } from "@/components";
 import { sdk } from "@/utils";
-
-import type { PageBySlugQuery } from "@/graphql";
+import type { BaseElement, PageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<PageBySlugQuery> = {
   async GET(_, ctx) {
@@ -21,16 +19,11 @@ const Home = (
     <Container>
       <Hero />
       <h1>{page?.title}</h1>
-      <img
-        src="/logo.svg"
-        className="w-32 h-32"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p className="my-6">
-        Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-        file, and refresh.
-      </p>
-      <Counter start={3} />
+      {page?.elementalArea && (
+        <ElementalArea
+          elements={page?.elementalArea?.elements.nodes as BaseElement[]}
+        />
+      )}
     </Container>
   </Layout>
 );

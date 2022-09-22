@@ -1,9 +1,9 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, Head, Layout } from "@/components";
+import { Container, ElementalArea, Head, Layout } from "@/components";
 import { sdk } from "@/utils";
 
-import type { ProjectPageBySlugQuery } from "@/graphql";
+import type { BaseElement, ProjectPageBySlugQuery } from "@/graphql";
 
 export const handler: Handlers<ProjectPageBySlugQuery> = {
   async GET(_, ctx) {
@@ -28,7 +28,11 @@ const Project = (
       </Container>
     </div>
     <Container>
-      <div dangerouslySetInnerHTML={{ __html: page?.content as string }} />
+      {page?.elementalArea && (
+        <ElementalArea
+          elements={page?.elementalArea?.elements.nodes as BaseElement[]}
+        />
+      )}
     </Container>
   </Layout>
 );
