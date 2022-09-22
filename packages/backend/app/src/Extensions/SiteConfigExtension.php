@@ -4,8 +4,6 @@ namespace App\Extensions;
 
 use Sheadawson\Linkable\Forms\LinkField;
 use Sheadawson\Linkable\Models\Link;
-use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;

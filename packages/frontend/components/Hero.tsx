@@ -1,13 +1,8 @@
 
-import cn from "classnames";
-
-export type heroTypes = {
-    heroTitle: string
-    heroContent: string
-}
+import type { SiteConfigFieldsFragment } from "@/graphql";
 
 type heroProps = {
-    heroData?:  heroTypes
+    heroData?:   SiteConfigFieldsFragment | null | undefined;
 }
 
 const Hero = ( { heroData } : heroProps )  => {
