@@ -4,8 +4,9 @@ import {
   Container,
   ElementalArea,
   Head,
+  Hero,
   Layout,
-  ProjectShowcase, Hero,
+  ProjectShowcase,
 } from "@/components";
 import { sdk } from "@/utils";
 import type { BaseElement, HomepageQuery } from "@/graphql";
