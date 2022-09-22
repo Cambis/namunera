@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, ElementalArea, Head, Layout } from "@/components"
+import { Container, ElementalArea, Head, Layout } from "@/components";
 import { sdk } from "@/utils";
 
 import type { BaseElementInterface, PageBySlugQuery } from "@/graphql";
@@ -22,10 +22,10 @@ const Page = (
       <h1>{page?.title}</h1>
       {page?.elementalArea && (
         <ElementalArea
-          elements={page?.elementalArea?.elements.nodes as BaseElementInterface[]}
+          elements={page?.elementalArea?.elements
+            .nodes as BaseElementInterface[]}
         />
       )}
-
     </Container>
   </Layout>
 );

@@ -1,6 +1,12 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import { Container, ElementalArea, Head, Layout, ProjectShowcase } from "@/components";
+import {
+  Container,
+  ElementalArea,
+  Head,
+  Layout,
+  ProjectShowcase,
+} from "@/components";
 import { sdk } from "@/utils";
 
 import type { AllProjectPagesQuery, BaseElementInterface } from "@/graphql";
@@ -14,7 +20,9 @@ export const handler: Handlers<AllProjectPagesQuery> = {
 };
 
 const ProjectsLandingPage = (
-  { data: { page, pages, navItems, siteConfig } }: PageProps<AllProjectPagesQuery>,
+  { data: { page, pages, navItems, siteConfig } }: PageProps<
+    AllProjectPagesQuery
+  >,
 ) => (
   <Layout headerProps={navItems} footerLinks={navItems} siteConfig={siteConfig}>
     <Head image={undefined} page={page} siteConfig={siteConfig} />
