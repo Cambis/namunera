@@ -1,0 +1,7 @@
+fragment ProjectPageFields on ProjectPage {
+  ...PageFields
+
+  heroImage {
+    ...ImageFields
+  }
+}

@@ -1,0 +1,58 @@
+SilverStripe\Assets\Image:
+  defaultProjectHero:
+    Filename: assets/fixtures/default-project.png
+    Title: Default project hero
+    PopulateFileFrom: app/fixtures/assets/default-project.png
+
+Page:
+  homepage:
+    Title: 'Home'
+    URLSegment: 'home'
+    Content: >
+      <p>Welcome to SilverStripe! This is the default homepage. You can edit this page by opening <a href="admin/">the CMS</a>.</p>
+      <p>You can now access the <a href="http://docs.silverstripe.org">developer documentation</a>, or begin the <a href="http://www.silverstripe.org/learn/lessons">SilverStripe lessons</a>.</p>
+  projects:
+    Title: 'Projects'
+    URLSegment: 'projects'
+    ShowInMenus: '0'
+    ShowInSearch: '0'
+  about:
+    Title: 'About'
+    URLSegment: 'about'
+
+App\PageTypes\ProjectPage:
+  silverstripeDesignReview:
+    Title: 'Silverstripe Design Review'
+    URLSegment: 'silverstripe-design-review'
+    HeroImage: =>SilverStripe\Assets\Image.defaultProjectHero
+    Content: >
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    Parent: =>Page.projects
+  alps:
+    Title: 'ALPS'
+    URLSegment: 'alps'
+    HeroImage: =>SilverStripe\Assets\Image.defaultProjectHero
+    Content: >
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    Parent: =>Page.projects
+  virtualWorkshopTooling:
+    Title: 'Virtual Workshop Tooling'
+    URLSegment: 'virtual-workshop-tooling'
+    HeroImage: =>SilverStripe\Assets\Image.defaultProjectHero
+    Content: >
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    Parent: =>Page.projects
+  betaForms:
+    Title: 'Beta forms'
+    URLSegment: 'beta-forms'
+    HeroImage: =>SilverStripe\Assets\Image.defaultProjectHero
+    Content: >
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    Parent: =>Page.projects
+  cleanUpConfluence:
+    Title: 'Clean up confluence'
+    URLSegment: 'virtual-workshop-tooling'
+    HeroImage: =>SilverStripe\Assets\Image.defaultProjectHero
+    Content: >
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    Parent: =>Page.projects

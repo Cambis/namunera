@@ -1,4 +1,5 @@
 {
+  "deno.path": "/usr/local/bin/deno",
   "deno.enablePaths": [
     "./packages/frontend"
   ],

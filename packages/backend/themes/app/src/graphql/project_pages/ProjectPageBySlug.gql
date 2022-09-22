@@ -1,11 +1,6 @@
-query PageBySlug($slug: String!) {
-  page: readOnePage(filter: { urlSegment: { eq: $slug } }) {
-    ...PageFields
-  }
-  siteConfig: readOneSiteConfig {
-       title
-       heroTitle
-       heroContent
+query ProjectPageBySlug($slug: String!) {
+  page: readOneProjectPage(filter: { urlSegment: { eq: $slug }}) {
+    ...ProjectPageFields
   }
 
   navItems: readPages(

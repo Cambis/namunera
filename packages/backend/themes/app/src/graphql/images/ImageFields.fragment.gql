@@ -1,0 +1,5 @@
+fragment ImageFields on ImageInterface {
+  __typename
+  id
+  link
+}

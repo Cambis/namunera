@@ -1,4 +1,4 @@
-fragment PageFields on Page {
+fragment PageFields on PageInterface {
   __typename
   id
   content
@@ -7,4 +7,5 @@ fragment PageFields on Page {
   showInSearch
   title
   urlSegment
+  link
 }
